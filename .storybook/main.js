@@ -5,5 +5,16 @@ module.exports = {
         '@storybook/addon-links',
         // Essentials "zero config" collection of addons for Storybook.
         '@storybook/addon-essentials'
-    ]
+    ],
+    webpackFinal: async (config, { configType }) => {
+        config.module.rules.push(
+            // load css | sass | scss
+            {
+                test: /\.(sa|sc|c)ss$/,
+                loader: ['style-loader', 'css-loader', 'sass-loader']
+            }
+        )
+        // return the altered config
+        return config
+    }
 }
