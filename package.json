@@ -5,16 +5,15 @@
   "main": "webpack.config.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
-    "dev": "webpack --mode development",
-    "prod": "webpack --mode production",
+    "build:dev": "rm -rf dist && webpack --mode development",
+    "build:prod": "rm -rf dist && webpack --mode production",
     "build:server": "rm -rf ./build && tsc --p ./src/backend/tsconfig.json",
     "storybook": "start-storybook --quiet -p 8081",
     "build:storybook": "build-storybook",
     "ci:lint": "eslint src --quiet",
     "lint:fix": "eslint src --fix",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "npm run build:prod && gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
@@ -45,6 +44,7 @@
     "eslint-plugin-html": "^6.1.0",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.21.4",
+    "gh-pages": "^3.1.0",
     "html-webpack-plugin": "^4.5.0",
     "node-sass": "^4.14.1",
     "prettier": "^2.1.2",

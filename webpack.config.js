@@ -8,7 +8,7 @@ module.exports = () => {
         // output a bundle to the specific folder
         output: {
             //path: path.resolve(dirname, './public'),
-            filename: 'build/app.js'
+            filename: 'candyfox.js'
         },
         module: {
             rules: [
