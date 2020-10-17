@@ -1,7 +1,7 @@
-# See https://help.github.com/ignore-files/ for more about ignoring files.
+# Ignore folders
+node_modules/
+build/
 
-# dependencies
-/node_modules
-
-# build
-/dist
+# Ignore files
+**/*.DS_Store
+.env
